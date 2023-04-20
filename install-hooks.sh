@@ -1,7 +1,12 @@
 #!/bin/bash
 
 for FILE in *; do
-	cp ${FILE} ../.git/hooks
-	chmod 744 ../.git/hooks/${FILE}
+	if [ ! -f /path/to/file ]
+	then
+		cp ${FILE} ../.git/hooks
+		chmod 744 ../.git/hooks/${FILE}
+	else
+    		echo "Hook ${FILE} already exists."
+	fi
 done
 
